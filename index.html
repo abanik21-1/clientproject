@@ -1,38 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-
   <head>
-    <title> Client Project </title>
-    
+    <title>Client Project</title>
+
     <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
     <link type="text/css" rel="stylesheet" href="css/style.css" />
-    <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2&amily=Archivo+Black&display=swap" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2&amily=Archivo+Black&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-  </head>  
+  <body>
+    <!-- Page Content -->
+    <header>
+      <h1>Movie Night</h1>
+    </header>
 
-<body>
+    <input class="search-term" placeholder="enter movie title..." />
+    <button class="search-button">Search</button>
+    <button class="rsearch-button">Search Random</button>
+    <br /><br />
 
-  <!-- Page Content -->
-  <header>
-    <h1> Client Project </h1>
-  </header>
-  
-  <input class="search-term" placeholder="Search">
-  <button class="search-button">Search</button>
 
-  <!-- Have your GIF appear below -->
-  <div class="main">
-    <h3 class="display"></h3>
-  </div>
+    <div class="plot"></div>
 
-  
-  <!-- Footer -->
-  <footer>
-    <p>Copyright &copy; Aparajita 20-21</p>
-  </footer>
+    <button>Press Here for Cast</button>
 
- 
-</body>
-  
+    <div class="results">
+      <div class="movie-poster">
+        <img id="moviePoster" />
+      </div>
+      
+      <div class="info">
+        <h1 id="movieTitle"></h1>
+        <h3 id="releaseDate"></h3>
+        <h2 id="overviewHeader"></h2>
+        <p id="overview"></p>
+        <p>
+           Infjwenf 
+        </p>
+        <div class="reviews">
+          <h2 id="reviewHeader"></h2>
+          <p class="review"></p>
+          <a id="reviewLink" href="" target="_blank"></a>
+        </div>
+        
+      </div>
+    </div>
+
+    <!-- Have your GIF appear below -->
+    <div class="main">
+      <h3 class="display"></h3>
+    </div>
+
+    
+    
+    <!-- Footer -->
+    <footer>
+      <p>Copyright &copy; Aparajita 21-22</p>
+    </footer>
+  </body>
 </html>
+
