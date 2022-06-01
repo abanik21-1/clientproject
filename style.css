@@ -1,9 +1,10 @@
-html {
-  background-color: #193119;
+body {
+  background-color: #d5654d;
 }
 
 button {
-  
+  background-color: #CAA0FF;
+  border-radius: 15px;
 }
 
 results {
@@ -11,4 +12,16 @@ results {
     padding: 5px;
     border: solid black 5px;
     margin: 5px;
+}
+
+
+p {
+   color: white;
+  font-size: 25px;
+}
+
+h1 {
+   color: #EFC176;
+  font-size: 60px;
+
 }
