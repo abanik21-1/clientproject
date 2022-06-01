@@ -1,10 +1,12 @@
 body {
   background-color: #d5654d;
+  
 }
 
 button {
   background-color: #CAA0FF;
   border-radius: 15px;
+  
 }
 
 results {
@@ -18,10 +20,24 @@ results {
 p {
    color: white;
   font-size: 25px;
+  
 }
 
 h1 {
-   color: #EFC176;
-  font-size: 60px;
-
+color: #EFC176;
+font-size: 60px;
+display: flex;
+justify-content: center;
 }
+
+.results {
+  text-align: center;
+}
+.searching {
+text-align: center;
+}
+
+.copyright{
+  text-align: center;
+}
+
