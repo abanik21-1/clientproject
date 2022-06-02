@@ -1,23 +1,36 @@
-$("search-button").click(function () {
+$(".search-button").click(function () {
   // Declare a variable that will store the user's input
-  let movieTitle = $("#movieInput").val();
+  let movieSearch = $(".search-term").val();
 
+  console.log(movieSearch);
   // Use string interpolation to include the search term
   let movieAPI =
     "https://api.themoviedb.org/3/search/movie?api_key=1de8557f26f4d177fcb5b21811677161&language=en-US&query=" +
-    movieTitle +
+    movieSearch+
     "&page=1&include_adult=false";
 
+  
+  let movieposterURL = "https://image.tmdb.org/t/p/w500/";
   fetch(movieAPI)
     .then(function (response) {
       return response.json();
     })
 
     .then(function (tvData) {
-      var picURL = tvData[0].show.image.medium;
-      $("body").append(`<img src=${picURL}>`);
+      var moviePoster = tvData.results[0].poster_path;
+    let movieTitle = tvData.results[0].original_title;
+    let movieOverview = tvData.results[0].overview;
+    let movieDate = tvData.results[0].release_date;
+    let fullmovieposterURL = movieposterURL + moviePoster;
+      $(".movie-poster").html(`<img src=${fullmovieposterURL}>`);
+    $("#movieName").html(movieTitle);
+    $("#overview").html(movieOverview);
+    $("#release-Date").html(movieDate);
     });
 });
+
+
+
 
 $(".random-search").click(function () {
   // Declare a variable that will store the user's input
@@ -37,4 +50,7 @@ $(".random-search").click(function () {
       console.log(randomGif);
       $(".display").html(`<img src="${randomGif}"></img>`);
     });
-});
+    });
+
+
+//do research on returning a random movie with the api. what would be the easiest way to do it
