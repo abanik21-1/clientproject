@@ -1,14 +1,11 @@
+//search button 
 $(".search-button").click(function () {
-  // Declare a variable that will store the user's input
   let movieSearch = $(".search-term").val();
 
   console.log(movieSearch);
-  // Use string interpolation to include the search term
   let movieAPI =
     "https://api.themoviedb.org/3/search/movie?api_key=1de8557f26f4d177fcb5b21811677161&language=en-US&query=" +
-    movieSearch+
-    "&page=1&include_adult=false";
-
+    movieSearch+ "&page=1&include_adult=false";
   
   let movieposterURL = "https://image.tmdb.org/t/p/w500/";
   fetch(movieAPI)
@@ -29,28 +26,27 @@ $(".search-button").click(function () {
     });
 });
 
-
-
-
+//search random button 
 $(".random-search").click(function () {
-  // Declare a variable that will store the user's input
-  let userInput = $("input").val();
+  let movieRandom = $(".search-term").val();
 
-  // Use string concatenation to include the search term
-  let customGiphy = `https://api.giphy.com/v1/gifs/search?q=${userInput}&rating=pg&api_key=tTVMCPwEb1NapUWHla1pBNt4jKlfEqo1`;
-
-  fetch(customGiphy)
+  let  movieAPI = "https://api.themoviedb.org/3/search/movie?api_key=1de8557f26f4d177fcb5b21811677161&language=en-US&query=" +
+    movieRandom+
+    "&page=1&include_adult=false"
+  fetch(movieAPI)
     .then(function (response) {
       return response.json();
     })
 
     .then(function (data) {
-      let randomNum = Math.floor(Math.random() * data.data.length);
-      let randomGif = data.data[randomNum].images.original.url;
-      console.log(randomGif);
-      $(".display").html(`<img src="${randomGif}"></img>`);
+      let randomNum = Math.floor(Math.random() * data.results);
+      let randomResults = data.results[randomNum].original_title.poster_path.release_date.overview;
+      console.log();
+      $(".display").html(`<img src="${randomResults}"></img>`);
     });
     });
 
 
+//some problems 
 //do research on returning a random movie with the api. what would be the easiest way to do it
+// fix movie poster border 

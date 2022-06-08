@@ -1,3 +1,4 @@
+
 body {
   background-color: #d5654d;
   
@@ -7,6 +8,11 @@ button {
   background-color: #CAA0FF;
   border-radius: 15px;
   
+}
+
+button:hover {
+  background-color: white;
+  transition: 0.4s;
 }
 
 results {
@@ -19,19 +25,31 @@ results {
 
 p {
    color: white;
-  font-size: 25px;
+  font-size: 22px;
   
 }
 
 h1 {
-color: #EFC176;
-font-size: 60px;
+  display: flex;
+justify-content: center;
+  color: #EFC176;
+  font-size: 75px;
+  text-shadow: .1em .1em 0 hsl(200 50% 30%);
+font-size: 5rem;
+  font-weight: 500;
+  line-height: 1.1;
+  max-inline-size: 40ch;
+}
+
+h2 {
+color: #f9e5bc;
+font-size: 56px;
 display: flex;
 justify-content: center;
 }
 
 .results {
-  text-align: center;
+text-align: center;
 }
 .searching {
 text-align: center;
@@ -41,3 +59,16 @@ text-align: center;
   text-align: center;
 }
 
+.moviePoster {
+   border: 2px solid #00A4BD;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+#release-Date {
+  font-size: 25px;
+}
+
+#copyright {
+  font-size: 18px;
+}
