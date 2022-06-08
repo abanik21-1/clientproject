@@ -26,6 +26,7 @@ $(".search-button").click(function () {
     });
 });
 
+
 //search random button 
 $(".random-search").click(function () {
   let movieRandom = $(".search-term").val();

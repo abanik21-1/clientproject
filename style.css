@@ -1,7 +1,6 @@
 
 body {
   background-color: #d5654d;
-  
 }
 
 button {
@@ -21,7 +20,6 @@ results {
     border: solid black 5px;
     margin: 5px;
 }
-
 
 p {
    color: white;
@@ -59,10 +57,10 @@ text-align: center;
   text-align: center;
 }
 
-.moviePoster {
+#moviePoster {
    border: 2px solid #00A4BD;
   padding: 10px;
-  border-radius: 12px;
+  border-radius: 6px;
 }
 
 #release-Date {
@@ -72,3 +70,4 @@ text-align: center;
 #copyright {
   font-size: 18px;
 }
+
