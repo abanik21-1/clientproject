@@ -28,24 +28,32 @@ $(".search-button").click(function () {
 
 
 //search random button 
-$(".random-search").click(function () {
-  let movieRandom = $(".search-term").val();
+$(".random-search-button").click(function () {
+  let randomNumber = Math.floor(Math.random()*5);
+let randomNumbertwo = Math.floor(Math.random()*20);
+  
+let movieAPI = `https://api.themoviedb.org/3/discover/movie?api_key=1de8557f26f4d177fcb5b21811677161&language=en-US&certification_country=US&certification.lte=PG-13&sort_by=popularity.desc&page=${randomNumber}`;
 
-  let  movieAPI = "https://api.themoviedb.org/3/search/movie?api_key=1de8557f26f4d177fcb5b21811677161&language=en-US&query=" +
-    movieRandom+
-    "&page=1&include_adult=false"
+  let movieposterURL = "https://image.tmdb.org/t/p/w500/";
+  
   fetch(movieAPI)
     .then(function (response) {
       return response.json();
     })
 
-    .then(function (data) {
-      let randomNum = Math.floor(Math.random() * data.results);
-      let randomResults = data.results[randomNum].original_title.poster_path.release_date.overview;
-      console.log();
-      $(".display").html(`<img src="${randomResults}"></img>`);
+    .then(function (tvData) {
+      var moviePoster = tvData.results[randomNumbertwo].poster_path;
+    let movieTitle = tvData.results[randomNumbertwo].original_title;
+    let movieOverview = tvData.results[randomNumbertwo].overview;
+    let movieDate = tvData.results[randomNumbertwo].release_date;
+    let fullmovieposterURL = movieposterURL + moviePoster;
+      $(".movie-poster").html(`<img src=${fullmovieposterURL}>`);
+    $("#movieName").html(movieTitle);
+    $("#overview").html(movieOverview);
+    $("#release-Date").html(movieDate);
     });
-    });
+});
+
 
 
 //some problems 
